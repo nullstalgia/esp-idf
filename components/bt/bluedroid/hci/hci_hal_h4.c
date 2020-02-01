@@ -348,6 +348,7 @@ static void host_send_pkt_available_cb(void)
 
 static int host_recv_pkt_cb(uint8_t *data, uint16_t len)
 {
+    if(len == 20) {len = 8;}
     //Target has packet to host, malloc new buffer for packet
     BT_HDR *pkt;
     size_t pkt_size;
